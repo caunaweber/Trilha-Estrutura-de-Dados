@@ -50,47 +50,6 @@ class ListaDuplamenteEncadeada {
 
         console.log(valores.join(" -> "));
     }
-
-        inserirInicio(valor) {
-        let novoNo = new No(valor);
-
-        if (this.head === null) {
-            this.head = novoNo;
-            this.tail = novoNo;
-            return;
-        }
-
-        novoNo.proximo = this.head;
-        this.head.anterior = novoNo;
-        
-        this.head = novoNo;
-    }
-
-        removerFinal() {
-        if (this.tail === null) return;
-
-        if (this.head === this.tail) {
-            this.head = null;
-            this.tail = null;
-            return;
-        }
-
-        this.tail = this.tail.anterior;
-        this.tail.proximo = null;
-    }
-
-        imprimirInicioParaFim() {
-        let atual = this.head;
-        let valores = [];
-
-        while (atual !== null) {
-            valores.push(atual.valor);
-            atual = atual.proximo;
-        }
-
-        console.log(valores.join(" -> "));
-    }
-
         imprimirFimParaInicio() {
         let atual = this.tail;
         let valores = [];
