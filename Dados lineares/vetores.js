@@ -4,6 +4,9 @@ function removerValor(valor) {
     let index = vetor.indexOf(valor);
     if (index !== -1) {
         vetor.splice(index, 1);
+        console.log("Valor removido.");
+    } else {
+        console.log("Valor não encontrado no vetor.");
     }
 }
 
@@ -13,5 +16,4 @@ function imprimirVetor() {
 
 imprimirVetor();
 removerValor(5);
-console.log("Valor removido");
 imprimirVetor();

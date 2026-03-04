@@ -53,7 +53,7 @@ class Banco {
         }
 
         let cliente = this.fila.dequeue();
-        console.log(`${cliente} foi atendido.`);
+        console.log(`${cliente} foi atendido(a).`);
     }
 
     mostrarFila() {
