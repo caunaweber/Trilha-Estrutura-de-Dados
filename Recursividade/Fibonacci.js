@@ -24,5 +24,27 @@ function fibonacciMemo(n, memo = {}) {
 
 // muito mais rápido
 console.time("fibMemo");
-console.log(fibonacciMemo(50));
+console.log(fibonacciMemo(200));
 console.timeEnd("fibMemo");
+
+// solução iterativa, sem recursão e sem cache
+function fibonacciIterativo(n) {
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+
+    let a = 0;
+    let b = 1;
+
+    for (let i = 2; i <= n; i++) {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    return b;
+}
+
+//também muito rápido e sem alocar memoria para o cache
+console.time("fibIterativo");
+console.log(fibonacciIterativo(300));
+console.timeEnd("fibIterativo");
