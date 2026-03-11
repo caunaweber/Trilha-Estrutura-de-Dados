@@ -21,6 +21,11 @@ class ListaEncadeada{
         return no.valor + this.somaRecursiva(no.proximo);
     }
 
+    contarNos(no = this.head) {
+    if (no === null) return 0;
+    return 1 + this.contarNos(no.proximo)
+    }
+
     imprimir() {
         let atual = this.head;
         let valores = [];
@@ -43,3 +48,5 @@ lista.inserirInicio(100);
 console.log("Lista Encadeada:");
 lista.imprimir();
 console.log("Soma dos elementos da lista:", lista.somaRecursiva());
+
+console.log("Quantidade de nós:", lista.contarNos());
